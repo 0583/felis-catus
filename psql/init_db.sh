@@ -1,3 +1,4 @@
 #!/usr/bin/env bash 
 
-psql < ./psql_scripts.rb
+createuser -h localhost -p 5432 felis
+createdb -O felis felisdb

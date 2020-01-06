@@ -1,3 +1,3 @@
-createuser -s admin
-createdb -O admin felisdb
-exit
+create user -s felisdb
+createdb -O felisdb felisdb
+\q
