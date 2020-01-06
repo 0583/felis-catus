@@ -55,7 +55,7 @@ def Redirect(short_link):
     response = cur.fetchone()
     cur.close()
 
-    if len(response) == 3:
+    if response and len(response) == 3:
         return redirect(response[2], code=302)
     else:
         return jsonify(error_response())
