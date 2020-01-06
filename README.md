@@ -27,5 +27,3 @@ Short Link Redirector
 * run script `./src/init_data.sh` to push data entries
 
 * run script `./src/run_server.sh` to start the server
-
-* go to 
