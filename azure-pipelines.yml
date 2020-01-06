@@ -34,8 +34,8 @@ steps:
 
 - script: |
     cd ./src
-    ./init_db.sh
-    ./init_link.sh
+    ./init_db.sh < '\n'
+    ./init_link.sh < '\n'
     python ./gen_rb.py
     ./init_data.sh
   displayName: 'Prepare PostgreSQL'
