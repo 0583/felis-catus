@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-rm -rf src_tmp
+rm -rf ./src_tmp
 
 cp -r ../src src_tmp
 
