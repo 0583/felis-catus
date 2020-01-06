@@ -12,7 +12,7 @@ from flask_migrate import Migrate, MigrateCommand
 
 from model import Entry
 from config import app, db
-from consts import DEBUG, PORT
+from consts import DEBUG, PORT, DB_NAME, USER_NAME, PASSWORD, DOMAIN_NAME
 
 migrate = Migrate(app, db)
 manager = Manager(app)
@@ -41,7 +41,7 @@ def Redirect(short_link):
     global conn
     if not conn:
         conn = psycopg2.connect(
-            database='felisdb', user='felis', password='', host='localhost')
+            database=DB_NAME, user=USER_NAME, password=PASSWORD, host=DOMAIN_NAME)
     sql = 'SELECT * FROM "pairs" WHERE short_link = \'{0}\''.format(
         str(short_link))
 

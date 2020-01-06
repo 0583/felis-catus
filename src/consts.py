@@ -3,6 +3,7 @@
 DEBUG = True
 PORT = 8080
 
-USER_NAME = 'felis'
 DOMAIN_NAME = 'localhost'
+USER_NAME = 'felis'
+PASSWORD = ''
 DB_NAME = 'felisdb'
