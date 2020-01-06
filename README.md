@@ -3,6 +3,8 @@
 
 Short Link Redirector
 
+[![Build Status](https://msbiglawgood.visualstudio.com/Felis%20Catus/_apis/build/status/0583.felis-catus?branchName=master)](https://msbiglawgood.visualstudio.com/Felis%20Catus/_build/latest?definitionId=3&branchName=master)
+
 ## tech stack
 
 * Flask
