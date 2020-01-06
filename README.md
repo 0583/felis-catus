@@ -15,7 +15,7 @@ Short Link Redirector
 
 ## local config
 
-* download & install postgresDB from [here](https://postgresapp.com/downloads.html)
+* download & install postgresDB from [here](https://postgresapp.com/downloads.html) or with [shell script](https://github.com/0583/felis-catus/tree/master/utils/install_pg.sh)
 
 * install requirements at `./requirements.txt`
 
