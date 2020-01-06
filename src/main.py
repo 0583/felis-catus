@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import psycopg2
+import psycopg2.extensions
+
 from config import app, db
 from consts import DEBUG, PORT
 from flask_script import Manager, Shell
@@ -22,7 +24,10 @@ manager.add_command('shell', Shell(make_context=make_shell_context))
 
 @app.route('/t/<short_link>', methods=['GET'])
 def redirect(short_link):
-    return
+    if not conn:
+        conn = psycopg2.connect(
+            database='felisdb', user='felis', password='', host='localhost')
+    sql = "SELECT * FROM felisdb WHERE short_link = "
 
 
 if __name__ == "__main__":
