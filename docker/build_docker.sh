@@ -4,7 +4,7 @@ rm -rf src_tmp
 
 cp -r ../src src_tmp
 
-cp ../utils/install_pg.sh ./src_tmp/utils/install_pg.sh
+cp ../utils/install_pg_for_docker.sh ./src_tmp/install_pg.sh
 cp ../requirements.txt ./src_tmp/requirements.txt
 
 echo "Going to build felis-catus-db docker"
