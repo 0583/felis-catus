@@ -1,0 +1,41 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+- script: |
+        sudo apt-get update &&
+        sudo apt-get -y install postgresql libpq-dev &&
+        echo "host    all             all             127.0.0.1/32            md5" > sudo tee -a /etc/postgresql/9.5/main/pg_hba.conf &&
+        sudo service postgresql restart && sleep 3 &&
+        sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';" &&
+        sudo service postgresql restart && sleep 3
+  displayName: 'Install postgresql'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: |
+    cd ./src
+    ./init_db.sh
+    ./init_link.sh
+    python ./gen_rb.py
+    ./init_data.sh
+  displayName: 'Prepare PostgreSQL'
