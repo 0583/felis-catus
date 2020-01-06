@@ -5,6 +5,7 @@ from config import db
 
 
 class Entry(db.Model):
+    __tablename__ = 'pairs'
     unique_id = db.Column(db.Integer(), primary_key=True, index=True)
     short_link = db.Column(db.String(80), unique=True)
     full_link = db.Column(db.String(255))
