@@ -11,6 +11,10 @@ Short Link Redirector
 
 * PostgreSQL
 
+* Docker Compose
+
+* Kong
+
 * ...
 
 ## local config
