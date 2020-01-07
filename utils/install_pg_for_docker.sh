@@ -6,3 +6,4 @@ echo "host    all             all             127.0.0.1/5432            md5" > t
 service postgresql restart
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 service postgresql restart
+sleep 5
