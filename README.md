@@ -34,3 +34,13 @@ Short Link Redirector
 * run script `./src/init_data.sh` to push data entries
 
 * run script `./src/run_server.sh` to start the server
+
+## single-server config
+
+* download & install docker and docker-compose on a web server
+
+* `cd ./docker` and `./run_docker_compose.sh` to bump up the docker composite containers
+
+## cluster config
+
+WIP
