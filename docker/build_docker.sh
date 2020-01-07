@@ -4,6 +4,7 @@ rm -rf ./src_tmp
 
 cp -r ../src src_tmp
 
+cp ../utils/bind_db.sh ./src_tmp/bind_db.sh
 cp ../utils/install_pg_for_docker.sh ./src_tmp/install_pg.sh
 cp ../requirements.txt ./src_tmp/requirements.txt
 
