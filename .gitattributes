@@ -1,0 +1,3 @@
+*.sql linguist-detectable=true
+*.md linguist-detectable=true
+*.rtf linguist-detectable=true
