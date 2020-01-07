@@ -39,7 +39,7 @@ def error_response():
     }
 
 
-def __getinfo(cpu_interval=1):
+def __getinfo(cpu_interval=0.1):
     try:
         cpu_pressure = psutil.cpu_percent(cpu_interval)
         cpu_logical_count = psutil.cpu_count()
