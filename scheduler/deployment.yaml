@@ -6,24 +6,24 @@ metadata:
     kompose.version: 1.16.0 (0c01309)
   creationTimestamp: null
   labels:
-    io.kompose.service: server-custom
-  name: server-custom
+    io.kompose.service: server-customed
+  name: server-customed
 spec:
   selector:
     matchLabels:
-      io.kompose.service: server-custom
+      io.kompose.service: server-customed
   replicas: 1
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: server-custom
+        io.kompose.service: server-customed
     spec:
       schedulerName: scheduler-customed
       containers:
       - image: yuxiqian/felis-catus-server:latest
-        name: server-custom
+        name: server-customed
         ports:
         - containerPort: 8080
         resources: {}

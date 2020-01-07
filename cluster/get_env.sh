@@ -31,5 +31,9 @@ curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-service.yaml > felisdb-service.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-deployment.yaml > server-deployment.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-service.yaml > server-service.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/rbac.yaml > rbac.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/deployment.yaml > deployment.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/custom_deployment.yaml > custom_deployment.yaml
+
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/run.sh > run.sh
 cd ..

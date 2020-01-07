@@ -1,3 +1,5 @@
+# microk8s.add-node
+
 kubectl create -f rbac.yaml
 kubectl create -f custom_deployment.yaml
 kubectl create -f felisdb-deployment.yaml
