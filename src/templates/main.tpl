@@ -28,6 +28,8 @@
       {% endfor %}
       </tbody>
     </table>
+
+    <h4>current cpu pressure: {{ cpu_pressure }}, memory pressure: {{ memory_pressure }}</h4>
     <h5>Copyright (c) {{ year }} @0583 Licensed under GPL-v3-or-later.</h5>
 </body>
 </head>
