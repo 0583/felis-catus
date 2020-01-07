@@ -1,4 +1,7 @@
-FROM yuxiqian/felis-catus-base
+FROM postgres:11
 EXPOSE 5432
-ADD src_tmp/ /
-ENTRYPOINT ["./bind_db.sh", "deadloop.sh"]
+ENV POSTGRES_PASSWORD '123456'
+ENV POSTGRES_USER 'felis'
+ENV POSTGRES_DB 'felis'
+
+ADD ./db/initi.sql /docker-entrypoint-initdb.d/schema.sql
