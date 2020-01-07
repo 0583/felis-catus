@@ -1,7 +1,7 @@
 version : '3.5'
 services:
   felisdb:
-    image: yuxiqian/felis-catus-db:latest
+    image: docker.pkg.github.com/0583/felis-catus/felis-catus-db:latest
     ports:
       - "5432:5432"
     container_name: felisdb
@@ -13,10 +13,9 @@ services:
       start_period: 20s
 
   server:
-    image: yuxiqian/felis-catus-server:latest
+    image: docker.pkg.github.com/0583/felis-catus/felis-catus-server:latest
     ports:
       - "8080:8080"
     depends_on: ["felisdb"]
     container_name: server
     restart: always
-

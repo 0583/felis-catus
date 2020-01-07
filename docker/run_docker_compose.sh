@@ -1,5 +1,5 @@
 #!/usr/bin/env bash 
 docker-compose down
-docker pull yuxiqian/felis-catus-db
-docker pull yuxiqian/felis-catus-server
+docker pull docker.pkg.github.com/0583/felis-catus/felis-catus-db:latest
+docker pull docker.pkg.github.com/0583/felis-catus/felis-catus-server:latest
 docker-compose up
