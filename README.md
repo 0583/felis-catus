@@ -4,6 +4,7 @@
 Short Link Redirector
 
 [![Build Status](https://msbiglawgood.visualstudio.com/Felis%20Catus/_apis/build/status/0583.felis-catus?branchName=master)](https://msbiglawgood.visualstudio.com/Felis%20Catus/_build/latest?definitionId=3&branchName=master)
+[![Actions Status](https://github.com/0583/felis-catus/workflows/Docker%20Image%20Build/badge.svg)](https://github.com/0583/felis-catus/actions)
 
 ## tech stack
 
