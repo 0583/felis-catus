@@ -11,7 +11,7 @@ rm -rf ./src_tmp/migrations
 
 echo "Going to build felis-catus-base docker"
 cp ./base/Dockerfile ./
-docker build -t yuxiqian/felis-catus-base .
+docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-base .
 rm Dockerfile
 
 docker login docker.pkg.github.com --username yuetsin

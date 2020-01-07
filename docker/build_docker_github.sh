@@ -12,12 +12,12 @@ rm -rf ./src_tmp/migrations
 
 echo "Going to build felis-catus-db docker"
 cp ./db/Dockerfile ./
-docker build -t yuxiqian/felis-catus-db .
+docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-db .
 rm Dockerfile
 
 echo "Going to build felis-catus-server docker"
 cp ./server/Dockerfile ./
-docker build -t yuxiqian/felis-catus-server .
+docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-server .
 rm Dockerfile
 
 docker login docker.pkg.github.com --username yuetsin
