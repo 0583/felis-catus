@@ -1,5 +1,4 @@
-kubectl delete deployment nginx-deployment
-kubectl delete nginx-service
-kubectl create -f default_d.yaml
-kubectl create -f custom_d.yaml
-kubectl apply -f service.yaml
+kubectl create -f felisdb-deployment.yaml
+kubectl create -f server-deployment.yaml
+kubectl apply -f felisdb-service.yaml
+kubectl apply -f server-service.yaml
