@@ -20,6 +20,7 @@ spec:
       labels:
         io.kompose.service: server
     spec:
+      hostNetwork: true
       containers:
       - image: yuxiqian/felis-catus-server:latest
         name: server

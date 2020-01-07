@@ -20,7 +20,6 @@ spec:
       labels:
         io.kompose.service: server-customed
     spec:
-      hostNetwork: true
       schedulerName: scheduler-customed
       containers:
       - image: yuxiqian/felis-catus-server:latest
