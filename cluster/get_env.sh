@@ -30,8 +30,3 @@ curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-service.yaml > felisdb-service.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-deployment.yaml > server-deployment.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-service.yaml > server-service.yaml
-
-sudo kubectl create -f felisdb-deployment.yaml
-sudo kubectl create -f server-deployment.yaml
-sudo kubectl apply -f felisdb-service.yaml
-sudo kubectl apply -f server-service.yaml
