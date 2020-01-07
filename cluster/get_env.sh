@@ -36,4 +36,6 @@ curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/deploy
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/custom_deployment.yaml > custom_deployment.yaml
 
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/run.sh > run.sh
+
+chmod +x run.sh
 cd ..
