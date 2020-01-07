@@ -80,7 +80,7 @@ def mainView():
         for v in range(0, random_count):
             i = ints[v]
             peek = __peek(hex(crc32(bytes(str(i), 'utf-8')))[2:].rjust(8, '0'))
-            if peek['full']:
+            if 'full' in peek:
                 TABLE.append(
                     ("#%d" % (i + 1), peek['short'], peek['full'], "./t/%s" % peek['short']))
         return render_template('main.tpl', title=TITLE, main_intro=INTRO, table_title=TABLE_TITLE, table=TABLE, year=YEAR)
