@@ -14,7 +14,7 @@ cp ./base/Dockerfile ./
 docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-base .
 rm Dockerfile
 
-docker login docker.pkg.github.com -u Yuan-Zhuo -p ${{ secrets.ACCESS_TOKEN }}
+docker login docker.pkg.github.com -u Yuan-Zhuo -p "$ACCESS_TOKEN"
 docker push docker.pkg.github.com/0583/felis-catus/felis-catus-base:latest
 
 echo "Done"

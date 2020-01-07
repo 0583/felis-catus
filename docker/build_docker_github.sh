@@ -20,7 +20,7 @@ cp ./server/Dockerfile ./
 docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-server .
 rm Dockerfile
 
-docker login docker.pkg.github.com -u Yuan-Zhuo -p ${{ secrets.ACCESS_TOKEN }}
+docker login docker.pkg.github.com -u Yuan-Zhuo -p "$ACCESS_TOKEN"
 docker push docker.pkg.github.com/0583/felis-catus/felis-catus-db:latest
 docker push docker.pkg.github.com/0583/felis-catus/felis-catus-server:latest
 
