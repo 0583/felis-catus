@@ -1,4 +1,4 @@
 #!/usr/bin/env bash 
+expect ./init_db_as_postgres_expect.sh
 
-sudo -u postgres createuser -h localhost -p 5432 felis -P < user_pswd
-sudo -u postgres createdb -O felis felisdb
+sudo -u postgres createdb -O felis felis
