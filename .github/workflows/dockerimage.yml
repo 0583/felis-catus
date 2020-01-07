@@ -11,4 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: cd docker | ./build_base_docker_github.sh | ./build_docker_github.sh
+      run: | 
+        cd docker
+        ./build_base_docker_github.sh
+        ./build_docker_github.sh
