@@ -14,13 +14,6 @@ sudo apt-get install python3-pip
 
 echo "pip3 installed"
 
-# docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
-echo "docker-compose installed"
-
 # kube
 sudo groupadd microk8s
 curl https://raw.githubusercontent.com/ycheng/microk8s-kubeflow-install/master/microk8s-install.bash > microk8s-install.sh
@@ -31,10 +24,14 @@ microk8s.status --wait-ready
 
 echo "microkube installed"
 
-# file
-curl https://raw.githubusercontent.com/0583/felis-catus/cluster/docker/docker-compose.yml > docker-compose.yml
-curl https://raw.githubusercontent.com/0583/felis-catus/cluster/docker/run_docker_compose.sh > run_docker_compose.sh
-chmod +x run_docker_compose.sh
-sudo ./run_docker_compose.sh &
+# files
+mkdir yamls
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-deployment.yaml > felisdb-deployment.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-service.yaml > felisdb-service.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-deployment.yaml > server-deployment.yaml
+curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-service.yaml > server-service.yaml
 
-echo "app running"
+sudo kubectl create -f felisdb-deployment.yaml
+sudo kubectl create -f server-deployment.yaml
+sudo kubectl apply -f felisdb-service.yaml
+sudo kubectl apply -f server-service.yaml
