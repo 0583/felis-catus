@@ -24,7 +24,7 @@ def make_shell_context():
 
 manager.add_command('db', MigrateCommand)
 manager.add_command('shell', Shell(make_context=make_shell_context))
-manager.add_command('runserver', Server(port=PORT))
+manager.add_command('runserver', Server(host="0.0.0.0", port=PORT))
 conn = None
 
 
@@ -40,8 +40,13 @@ def error_response():
 def Redirect(short_link):
     global conn
     if not conn:
-        conn = psycopg2.connect(
-            database=DB_NAME, user=USER_NAME, password=PASSWORD, host=DOMAIN_NAME)
+        try:
+            conn = psycopg2.connect(database=DB_NAME,
+                                    user=USER_NAME,
+                                    password=PASSWORD,
+                                    host=DOMAIN_NAME)
+        except:
+            return jsonify(error_response())
     sql = 'SELECT * FROM "pairs" WHERE short_link = \'{0}\''.format(
         str(short_link))
 
