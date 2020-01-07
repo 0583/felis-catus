@@ -14,8 +14,5 @@ cp ./base/Dockerfile ./
 docker build -t yuxiqian/felis-catus-base .
 rm Dockerfile
 
-
-docker push yuxiqian/felis-catus-base
-
 echo "Done"
 rm -rf src_tmp
