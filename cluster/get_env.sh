@@ -12,7 +12,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # file
-curl https://github.com/0583/felis-catus/blob/master/docker/docker-compose.yml
-curl https://github.com/0583/felis-catus/blob/master/docker/run_docker_compose.sh
+curl https://github.com/0583/felis-catus/blob/cluster/docker/docker-compose.yml
+curl https://github.com/0583/felis-catus/blob/cluster/docker/run_docker_compose.sh
 chmod +x run_docker_compose.sh
 ./run_docker_compose.sh
