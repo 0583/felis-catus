@@ -20,7 +20,7 @@ cp ./server/Dockerfile ./
 docker build -t docker.pkg.github.com/0583/felis-catus/felis-catus-server .
 rm Dockerfile
 
-docker login docker.pkg.github.com --username yuetsin
+docker login docker.pkg.github.com --username Yuan-Zhuo --password $ACCESS_TOKEN
 docker push docker.pkg.github.com/0583/felis-catus/felis-catus-db:latest
 docker push docker.pkg.github.com/0583/felis-catus/felis-catus-server:latest
 
