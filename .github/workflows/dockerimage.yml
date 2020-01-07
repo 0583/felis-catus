@@ -13,7 +13,10 @@ jobs:
     - name: Build the Docker image
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       run: | 
         cd docker
         ./build_base_docker_github.sh
         ./build_docker_github.sh
+        ./build_base_docker_dockerhub.sh
+        ./build_docker_dockerhub.sh
