@@ -26,6 +26,7 @@ echo "microkube installed"
 
 # files
 mkdir yamls
+cd yamls
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-deployment.yaml > felisdb-deployment.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/felisdb-service.yaml > felisdb-service.yaml
 curl https://raw.githubusercontent.com/0583/felis-catus/cluster/scheduler/yamls/server-deployment.yaml > server-deployment.yaml
