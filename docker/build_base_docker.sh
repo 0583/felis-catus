@@ -9,7 +9,7 @@ cp ../requirements.txt ./src_tmp/requirements.txt
 
 rm -rf ./src_tmp/migrations
 
-echo "Going to build felis-catus-db docker"
+echo "Going to build felis-catus-base docker"
 cp ./base/Dockerfile ./
 docker build -t yuxiqian/felis-catus-base .
 rm Dockerfile

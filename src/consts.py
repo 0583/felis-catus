@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-DEBUG = True
+DEBUG = False
 PORT = 8080
 
-DOMAIN_NAME = 'localhost'
+DOMAIN_NAME = 'felisdb'
 USER_NAME = 'felis'
-PASSWORD = ''
-DB_NAME = 'felisdb'
+PASSWORD = '123456'
+DB_NAME = 'felis'

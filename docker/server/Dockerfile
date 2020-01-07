@@ -1,4 +1,5 @@
-FROM yuxiqian/felis-catus-base
+FROM python:3
 EXPOSE 8080
 ADD src_tmp/ /
-CMD [ "./run_server.sh" ]
+RUN pip install -r requirements.txt
+ENTRYPOINT [ "./run_server.sh" ]
