@@ -20,11 +20,9 @@ cp ./server/Dockerfile ./
 docker build -t yuxiqian/felis-catus-server .
 rm Dockerfile
 
-echo "Going to push felis-catus-db docker"
-docker push yuxiqian/felis-catus-db
-
-echo "Going to push felis-catus-server docker"
-docker push yuxiqian/felis-catus-server
+docker login docker.pkg.github.com --username yuetsin
+docker push docker.pkg.github.com/0583/felis-catus/felis-catus-db:latest
+docker push docker.pkg.github.com/0583/felis-catus/felis-catus-server:latest
 
 echo "Done"
 rm -rf src_tmp
