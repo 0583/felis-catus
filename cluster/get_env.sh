@@ -24,7 +24,7 @@ echo "docker-compose installed"
 # kube
 sudo groupadd microk8s
 curl https://raw.githubusercontent.com/ycheng/microk8s-kubeflow-install/master/microk8s-install.bash > microk8s-install.sh
-chmod + microk8s-install.sh
+chmod +x microk8s-install.sh
 sudo ./microk8s-install.sh
 sudo usermod -a -G microk8s ubuntu
 microk8s.status --wait-ready
