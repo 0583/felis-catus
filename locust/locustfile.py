@@ -4,7 +4,7 @@ from zlib import crc32
 from random import randint
 from locust import HttpLocust, TaskSet, task
 
-HOST_DOMAIN = '12.34.56.78:8080'
+HOST_DOMAIN = os.environ('HOST_IP')
 
 
 class WebsiteTasks(TaskSet):
@@ -26,6 +26,6 @@ class WebsiteTasks(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = WebsiteTasks
-    host = HOST_DOMAIN
+    host = HOST_DOMAIN + ':8080'
     min_wait = 1000
     max_wait = 5000
