@@ -9,7 +9,7 @@ import psycopg2
 import psycopg2.extensions
 
 from zlib import crc32
-from flask import jsonify, redirect, render_template
+from flask import jsonify, redirect, render_template, request
 from flask_script import Manager, Shell, Server
 from flask_migrate import Migrate, MigrateCommand
 
@@ -178,7 +178,45 @@ def GetInfo():
 
 @app.route('/peek/<short_link>', methods=['GET'])
 def Peek(short_link):
+    short_link = short_link.replace(' ', '')
     return jsonify(__peek(short_link))
+
+
+@app.route('/add', methods=['POST'])
+def AddNew():
+    full_link = request.form.get('full_link')
+    global conn
+    if not conn:
+        try:
+            conn = psycopg2.connect(database=DB_NAME,
+                                    user=USER_NAME,
+                                    password=PASSWORD,
+                                    host=DOMAIN_NAME)
+        except:
+            return jsonify(error_response())
+
+    full_link = full_link.replace(' ', '')
+    max_retry = 3
+    retry_count = 0
+    while retry_count < max_retry:
+        try:
+            number = get_line_count() + 1
+            short_link = hex(crc32(bytes(str(number), 'utf-8'))
+                             )[2:].rjust(8, '0')
+            sql = "INSERT INTO pairs(short_link, full_link) VALUES ('{0}', '{1}')".format(
+                short_link, full_link)
+            success_response = {
+                'status': 'ok',
+                'short_link': short_link,
+                'full_link': full_link
+            }
+            cur = conn.cursor()
+            cur.execute(sql)
+            return jsonify(success_response)
+        except:
+            retry_count += 1
+            continue
+    return jsonify(error_response())
 
 
 @app.route('/t/<short_link>', methods=['GET'])
@@ -192,6 +230,8 @@ def Redirect(short_link):
                                     host=DOMAIN_NAME)
         except:
             return jsonify(error_response())
+
+    short_link = short_link.replace(' ', '')
     sql = 'SELECT * FROM "pairs" WHERE short_link = \'{0}\''.format(
         str(short_link))
 
