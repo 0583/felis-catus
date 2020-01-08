@@ -20,3 +20,4 @@ jobs:
         ./build_docker_github.sh
         ./build_base_docker_dockerhub.sh
         ./build_docker_dockerhub.sh
+
