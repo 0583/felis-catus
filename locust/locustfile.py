@@ -11,11 +11,11 @@ class WebsiteTasks(TaskSet):
     short_link = hex(crc32(bytes(str(randint(1, 32), 'utf-8')))
                      )[2:].rjust(8, '0')
 
-    @task(3)
+    @task(1)
     def get_info(self):
         self.client.get("/info")
 
-    @task(2)
+    @task(5)
     def rand_short(self):
         self.client.get("/%s" % short_link)
 
