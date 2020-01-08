@@ -43,4 +43,4 @@ Short Link Redirector
 
 ## cluster config
 
-WIP
+~~WIP~~ no longer
