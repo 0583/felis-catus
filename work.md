@@ -2,11 +2,11 @@
 
 ### Group member & Division
 
-* 于喜千  CI/CD, Tiny Application, PostgreSQL, Docker compose, all docker image
-* 袁卓    remote server, Kubernetes, Sheduler
-* 王邵宇  Kubernetes, Sheduler
-* 马包威  db数据库数据
-* 周雪振  sql, markdown
+* CI/CD, Tiny Application, PostgreSQL, Docker Compose
+* Remote server, Kubernetes, and Scheduler
+* Kubernetes & Sheduler
+* Database Initializing
+* SQL Conversion & Documentations
 
 ### Implement
 * Implement local-usable short-link redirector
