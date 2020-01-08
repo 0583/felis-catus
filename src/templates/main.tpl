@@ -8,8 +8,19 @@
 <body>
     <h1>{{ title }}</h1>
     <h2>{{ main_intro }}</h2>
-    <h2>{{ table_title }}</h2>
 
+    <h3>Submit new shorten link</h3>
+    <form action="/add" method="post">
+    <div>
+        <label for="full_link">What's your full link?</label>
+        <input name="full_link" id="full_link" value="https://www.github.com">
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+    </form>
+    
+    <h2>{{ table_title }}</h2>
 
 <table>
     <thead>
